@@ -12,6 +12,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var dataBinding : ActivityMainBinding
     lateinit var mainViewModel: MainViewModel
     lateinit var quotes: Quotes
+    lateinit var post: Post
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         dataBinding = DataBindingUtil.setContentView(this,R.layout.activity_main)
@@ -20,8 +21,9 @@ class MainActivity : AppCompatActivity() {
         /*mainViewModel.factLiveData.observe(this, Observer {
             dataBinding.textView.text = it
         })*/
-        dataBinding.lifecycleOwner = this
-        dataBinding.mainView = mainViewModel
+
+        /*dataBinding.lifecycleOwner = this
+        dataBinding.mainView = mainViewModel*/
 
         /*dataBinding.buttonPanel.setOnClickListener{
             mainViewModel.updateLiveData()
@@ -29,6 +31,10 @@ class MainActivity : AppCompatActivity() {
 
         /*quotes = Quotes("gaddar", "sikhoge nahi to aage badoge kaise")
         dataBinding.quotes = quotes*/
+
+        post = Post("Gaddar", "Hi I'm gaddar kumar chaudhary from siliguri institute of technology", "https://picsum.photos/200/300")
+        dataBinding.post = post
+
 
     }
 }

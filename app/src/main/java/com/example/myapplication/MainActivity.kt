@@ -17,10 +17,10 @@ class MainActivity : AppCompatActivity() {
         dataBinding = DataBindingUtil.setContentView(this,R.layout.activity_main)
         mainViewModel = ViewModelProvider(this)[MainViewModel::class.java]
 
-        mainViewModel.factLiveData.observe(this, Observer {
+        /*mainViewModel.factLiveData.observe(this, Observer {
             dataBinding.textView.text = it
-        })
-
+        })*/
+        dataBinding.lifecycleOwner = this
         dataBinding.mainView = mainViewModel
 
         /*dataBinding.buttonPanel.setOnClickListener{

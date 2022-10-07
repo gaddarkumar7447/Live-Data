@@ -21,11 +21,14 @@ class MainActivity : AppCompatActivity() {
             dataBinding.textView.text = it
         })
 
-        dataBinding.buttonPanel.setOnClickListener{
-            mainViewModel.updateLiveData()
-        }
+        dataBinding.mainView = mainViewModel
 
-        quotes = Quotes("gaddar", "sikhoge nahi to aage badoge kaise")
-        dataBinding.quotes = quotes
+        /*dataBinding.buttonPanel.setOnClickListener{
+            mainViewModel.updateLiveData()
+        }*/
+
+        /*quotes = Quotes("gaddar", "sikhoge nahi to aage badoge kaise")
+        dataBinding.quotes = quotes*/
+
     }
 }
